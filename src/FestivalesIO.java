@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -7,6 +6,7 @@ import java.util.Scanner;
  * La clase contiene méodos estáticos que permiten
  * cargar la agenda de festivales leyendo los datos desde
  * un fichero
+ *
  * @author Ioritz Perugorria Aldako
  */
 public class FestivalesIO {
@@ -33,6 +33,7 @@ public class FestivalesIO {
     /**
      * se parsea la línea extrayendo sus datos y creando y
      * devolviendo un objeto Festival
+     *
      * @param lineaFestival los datos de un festival
      * @return el festival creado
      */
@@ -45,8 +46,8 @@ public class FestivalesIO {
 
         String[] splited = lineaFestival.split(":");
 
-        for (int rep = 0; rep < splited.length; rep ++){
-            switch (rep){
+        for (int rep = 0; rep < splited.length; rep++) {
+            switch (rep) {
                 case 0:
                     splited[rep] = eliminarEspacios(splited[rep]);
                     splited[rep] = primeraMayuscula(splited[rep]);
@@ -68,12 +69,12 @@ public class FestivalesIO {
                     dias = Integer.parseInt(splited[rep]);
 
                 case 4:
-                    for (int num = 4; num < splited.length; num ++){
+                    for (int num = 4; num < splited.length; num++) {
                         splited[rep] = eliminarEspacios(splited[rep]);
                         splited[rep] = splited[rep].toUpperCase();
-                        
+
                         Estilo estilo = Estilo.valueOf(splited[rep]);
-                        
+
                         estilos.add(estilo);
                     }
             }
@@ -89,18 +90,16 @@ public class FestivalesIO {
      * elimina. Si encuentra un espacio que no esta al
      * principio o al final, lo ignora.
      */
-    public static String eliminarEspacios(String texto){
+    public static String eliminarEspacios(String texto) {
         int posicion;
 
-        while (true){
+        while (true) {
             posicion = texto.indexOf(" ");
-            if (posicion == 0){
+            if (posicion == 0) {
                 texto = texto.substring(posicion);
-            }
-            else if (posicion == texto.length() - 1){
+            } else if (posicion == texto.length() - 1) {
                 texto = texto.substring(0, texto.length() - 1);
-            }
-            else{
+            } else {
                 break;
             }
         }
@@ -113,19 +112,19 @@ public class FestivalesIO {
      * elimina cualquier espacio excesivo que pueda haber
      * entre las palabras;
      */
-    public static String primeraMayuscula(String texto){
+    public static String primeraMayuscula(String texto) {
         String[] substrings = texto.split(" ");
         String resultado = "";
 
-            for (int rep = 0; rep < substrings.length; rep++) {
-                substrings[rep] = eliminarEspacios(substrings[rep]);
+        for (int rep = 0; rep < substrings.length; rep++) {
+            substrings[rep] = eliminarEspacios(substrings[rep]);
 
-                substrings[rep] = substrings[rep].substring(0,1).toUpperCase() +
-                                  substrings[rep].substring(1).toLowerCase();
+            substrings[rep] = substrings[rep].substring(0, 1).toUpperCase() +
+                    substrings[rep].substring(1).toLowerCase();
 
-                resultado = resultado.concat(substrings[rep]);
-                resultado = resultado.concat(" ");
-            }
+            resultado = resultado.concat(substrings[rep]);
+            resultado = resultado.concat(" ");
+        }
         return resultado;
     }
 }
