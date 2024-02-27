@@ -74,10 +74,10 @@ public class FestivalesIO {
 
                 case 4:
                     for (int num = 4; num < splited.length; num++) {
-                        splited[rep] = eliminarEspacios(splited[rep]);
-                        splited[rep] = splited[rep].toUpperCase();
+                        splited[num] = eliminarEspacios(splited[num]);
+                        splited[num] = splited[num].toUpperCase();
 
-                        Estilo estilo = Estilo.valueOf(splited[rep]);
+                        Estilo estilo = Estilo.valueOf(splited[num]);
 
                         estilos.add(estilo);
                     }
