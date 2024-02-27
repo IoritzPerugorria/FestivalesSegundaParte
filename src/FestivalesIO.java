@@ -52,21 +52,25 @@ public class FestivalesIO {
                     splited[rep] = eliminarEspacios(splited[rep]);
                     splited[rep] = primeraMayuscula(splited[rep]);
                     nombre = nombre.concat(splited[rep]);
+                    break;
 
                 case 1:
                     splited[rep] = eliminarEspacios(splited[rep]);
                     splited[rep] = splited[rep].toUpperCase();
                     lugar = lugar.concat(splited[rep]);
+                    break;
 
                 case 2:
                     splited[rep] = eliminarEspacios(splited[rep]);
                     String[] date = splited[rep].split("-");
 
                     fecha = LocalDate.of(Integer.parseInt(date[2]), Integer.parseInt(date[1]), Integer.parseInt(date[0]));
+                    break;
 
                 case 3:
                     splited[rep] = eliminarEspacios(splited[rep]);
                     dias = Integer.parseInt(splited[rep]);
+                    break;
 
                 case 4:
                     for (int num = 4; num < splited.length; num++) {
@@ -77,6 +81,7 @@ public class FestivalesIO {
 
                         estilos.add(estilo);
                     }
+                    break;
             }
         }
         return new Festival(nombre, lugar, fecha, dias, estilos);
@@ -96,11 +101,15 @@ public class FestivalesIO {
         while (true) {
             posicion = texto.indexOf(" ");
             if (posicion == 0) {
-                texto = texto.substring(posicion);
-            } else if (posicion == texto.length() - 1) {
-                texto = texto.substring(0, texto.length() - 1);
-            } else {
-                break;
+                texto = texto.substring(posicion + 1);
+            }
+            else {
+                posicion = texto.lastIndexOf(" ");
+                if (posicion == texto.length() - 1) {
+                    texto = texto.substring(0, texto.length() - 1);
+                } else {
+                    break;
+                }
             }
         }
         return texto;

@@ -1,7 +1,7 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.HashSet;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 /**
  * Un objeto de esta clase almacena los datos de un
@@ -124,8 +124,8 @@ public class Festival {
      * @return true si el festival ya ha concluido
      */
     public boolean haConcluido() {
-        LocalDate fecha = LocalDate.of(fechaInicio.getYear(), fechaInicio.getMonthValue(), fechaInicio.getDayOfMonth() + duracion);
-        return fecha.isAfter(LocalDate.now());
+
+        return fechaInicio.isBefore(LocalDate.now());
     }
 
     /**
@@ -139,12 +139,28 @@ public class Festival {
         cadena = cadena.concat(nombre + "\t\t\t" + estilos.toString()) + "\n";
         cadena = cadena.concat(lugar + "\n");
 
-        if (this.haConcluido()){
-            DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd/MM");
-            String fecha1 = fechaInicio.format(formato1);
-
-            cadena = cadena.concat();
+        if (fechaInicio.isAfter(LocalDate.now()) || LocalDate.now().isAfter(fechaInicio.plusDays(duracion))){
+            LocalDate fechaFin = null;
+            if(duracion == 1){
+                fechaFin = fechaInicio;
+            }
+            else {
+                int dia = fechaInicio.getDayOfMonth();
+                String mes = String.valueOf(this.getMes());
+                cadena = cadena.concat(dia + " " + mes + " - ");
+                fechaFin = fechaInicio.plusDays(duracion);
+            }
+            if (this.haConcluido()) {
+                cadena = cadena.concat(String.valueOf(fechaFin.getDayOfMonth()) + " " + this.getMes() + " " + fechaFin.getYear() + " (concluido)");
+            } else {
+                cadena = cadena.concat(fechaFin + " (ON)");
+            }
         }
+        else if(fechaInicio.isAfter(LocalDate.now())) {
+            cadena = cadena.concat(String.valueOf(fechaInicio) + "(quedan " + DAYS.between(fechaInicio, LocalDate.now()) + " dias)");
+        }
+
+        cadena = cadena.concat("\n-----------------------------------" );
 
 
         return cadena;
@@ -194,5 +210,7 @@ public class Festival {
         System.out.println(f4.getNombre() + " ha concluido? " + f4.haConcluido());
         System.out.println(f1);
         System.out.println(f1.getNombre() + " ha concluido? " + f1.haConcluido());
+
+        System.out.println(LocalDate.now());
     }
 }
