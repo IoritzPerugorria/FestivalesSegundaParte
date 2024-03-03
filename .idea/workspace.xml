@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8236b133-3c7d-4bd5-87b0-422188b28d1e" name="Changes" comment="">
+    <list default="true" id="8236b133-3c7d-4bd5-87b0-422188b28d1e" name="Changes" comment="Creacion de algunos metodos en AgendaFestivales.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendaFestivales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Festival.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Festival.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestAgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestAgendaFestivales.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.TestAgendaFestivales.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -50,11 +52,25 @@
       <option name="presentableId" value="Default" />
       <updated>1709320809843</updated>
       <workItem from="1709320810872" duration="45000" />
-      <workItem from="1709422903650" duration="2059000" />
+      <workItem from="1709422903650" duration="2111000" />
+      <workItem from="1709460053147" duration="3031000" />
     </task>
+    <task id="LOCAL-00001" summary="Creacion de algunos metodos en AgendaFestivales.">
+      <option name="closed" value="true" />
+      <created>1709425015243</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709425015243</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creacion de algunos metodos en AgendaFestivales." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de algunos metodos en AgendaFestivales." />
   </component>
 </project>

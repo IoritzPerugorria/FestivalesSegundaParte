@@ -1,9 +1,5 @@
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 
 /**
@@ -90,9 +86,23 @@ public class AgendaFestivales {
      */
     @Override
     public String toString() {
-        //TODO
-        
-        return null;
+
+        String cadena = "";
+
+        ArrayList<Mes> meses = new ArrayList<>(agenda.keySet());
+        ArrayList<Festival> festivales;
+
+        for (Mes mes :meses){
+            festivales = new ArrayList<>(agenda.get(mes));
+            cadena = cadena.concat("\n\n" + mes + " (" + this.festivalesEnMes(mes) + " festival/es)" + "\n\n");
+            for (Festival festival : festivales){
+                cadena = cadena.concat(festival.toString());
+            }
+        }
+
+        return cadena;
+
+
     }
 
     /**
@@ -120,23 +130,34 @@ public class AgendaFestivales {
      *
      * Identifica el tipo exacto del valor de retorno
      */
-    public  TreeMap   festivalesPorEstilo() {
-        Estilo estilo;
-
-        TreeMap<Estilo, ArrayList<Festival>> estilos = new TreeMap<>();
+    public  TreeMap<Estilo, TreeSet<String>>   festivalesPorEstilo() {
+        TreeMap<Estilo, TreeSet<String>> estilos = new TreeMap<>();
         ArrayList<Mes> meses = new ArrayList<>(agenda.keySet());
         ArrayList<Festival> festivales;
 
-        for (Mes mes : meses){
-            festivales = new ArrayList<>(agenda.get(mes));
-            for (Festival festival : festivales){
-                festival.getEstilos();
+        for (Estilo estilo : Estilo.values()) {
+
+            TreeSet<String> festival_a_anadir = new TreeSet<>();
+
+            for (Mes mes : meses){
+                festivales = new ArrayList<>(agenda.get(mes));
+
+                for (Festival festival : festivales){
+                    ArrayList<Estilo> lista_estilos_fest = new ArrayList<>(festival.getEstilos());
+
+                    for(Estilo estilo_fest : lista_estilos_fest){
+                        if (estilo == estilo_fest){
+                            festival_a_anadir.add(festival.getNombre());
+                        }
+                    }
+                }
             }
+            if (!festival_a_anadir.isEmpty()){
+                estilos.put(estilo, festival_a_anadir);
+            }
+
         }
-
-         
-
-        return null;
+        return estilos;
     }
 
     /**

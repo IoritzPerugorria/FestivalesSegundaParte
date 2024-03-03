@@ -166,7 +166,7 @@ public class Festival {
             cadena = cadena.concat(String.valueOf(fechaInicio) + "(quedan " + DAYS.between(fechaInicio, LocalDate.now()) + " dias)");
         }
 
-        cadena = cadena.concat("\n-----------------------------------" );
+        cadena = cadena.concat("\n-----------------------------------\n" );
 
 
         return cadena;
