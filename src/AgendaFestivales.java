@@ -42,9 +42,17 @@ public class AgendaFestivales {
      *
      */
     public void addFestival(Festival festival) {
-        //TODO
-        
-        
+        ArrayList<Festival> festivales;
+        Mes mes = festival.getMes();
+
+        if (agenda.containsKey(mes)){
+            festivales = new ArrayList<>(agenda.get(mes));
+        }
+        else{
+            festivales = new ArrayList<>();
+        }
+        festivales.add(festival);
+        agenda.put(mes, festivales);
     }
 
     /**
@@ -54,12 +62,25 @@ public class AgendaFestivales {
      * @return la posición en la que debería ir el nuevo festival
      * de forma que la lista quedase ordenada por nombre
      */
-    private int obtenerPosicionDeInsercion(ArrayList<Festival> festivales,
-                                           Festival festival) {
-       //TODO
-        
-        return 0;
-        
+    private int obtenerPosicionDeInsercion(ArrayList<Festival> festivales, Festival festival) {
+        int posicion;
+
+       if (festivales.isEmpty()){
+           return 1;
+       }
+       else {
+           if (festivales.contains(festival)){
+               posicion = festivales.indexOf(festival);
+           }
+           else{
+               festivales.add(festival);
+               festivales.sort(null);
+               posicion = festivales.indexOf(festival);
+               festivales.remove(festival);
+           }
+
+           return posicion;
+       }
     }
 
     /**
@@ -81,9 +102,13 @@ public class AgendaFestivales {
      * Si el mes no existe se devuelve -1
      */
     public int festivalesEnMes(Mes mes) {
-       //TODO
-        
-        return 0;
+        if (agenda.containsKey(mes)) {
+            ArrayList<Festival> festivales = new ArrayList<>(agenda.get(mes));
+            return festivales.size();
+        }
+        else{
+            return -1;
+        }
     }
 
     /**
@@ -95,8 +120,19 @@ public class AgendaFestivales {
      *
      * Identifica el tipo exacto del valor de retorno
      */
-    public  Map   festivalesPorEstilo() {
-       //TODO
+    public  TreeMap   festivalesPorEstilo() {
+        Estilo estilo;
+
+        TreeMap<Estilo, ArrayList<Festival>> estilos = new TreeMap<>();
+        ArrayList<Mes> meses = new ArrayList<>(agenda.keySet());
+        ArrayList<Festival> festivales;
+
+        for (Mes mes : meses){
+            festivales = new ArrayList<>(agenda.get(mes));
+            for (Festival festival : festivales){
+                festival.getEstilos();
+            }
+        }
 
          
 
@@ -114,8 +150,25 @@ public class AgendaFestivales {
      * se borra la entrada completa del map
      */
     public int cancelarFestivales(HashSet<String> lugares, Mes mes) {
-       //TODO
-        
-        return 0;
+        if (!agenda.containsKey(mes)){
+            return -1;
+        }
+        else{
+            ArrayList<Festival> festivales = new ArrayList<>(agenda.get(mes));
+
+            for (Festival festival : festivales){
+                if(!festival.haConcluido() && !festival.haEmpezado()) {
+                    if (lugares.contains(festival.getLugar())) {
+                        festivales.remove(festival);
+                    }
+                }
+            }
+
+            if (festivales.isEmpty()){
+                agenda.remove(mes);
+            }
+
+            return 0;
+        }
     }
 }

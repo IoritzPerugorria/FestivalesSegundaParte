@@ -124,8 +124,14 @@ public class Festival {
      * @return true si el festival ya ha concluido
      */
     public boolean haConcluido() {
-
         return fechaInicio.isBefore(LocalDate.now());
+    }
+
+    /**
+     * @return true si el festival ya ha empezado
+     */
+    public boolean haEmpezado() {
+        return fechaInicio.isAfter(LocalDate.now());
     }
 
     /**
