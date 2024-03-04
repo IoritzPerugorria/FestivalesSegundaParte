@@ -1,4 +1,8 @@
- 
+package festivales.test;
+import festivales.IO.*;
+import festivales.modelo.*;
+
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
@@ -7,7 +11,7 @@ import java.util.TreeSet;
 public class TestAgendaFestivales {
     
     /**
-     * Código para probar la clase AgendaFestivales
+     * Código para probar la clase festivales.modelo.AgendaFestivales
      *
      */
     public static void main(String[] args) {

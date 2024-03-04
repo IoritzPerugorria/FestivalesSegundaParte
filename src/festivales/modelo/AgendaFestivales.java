@@ -1,3 +1,4 @@
+package festivales.modelo;
 
 import java.util.*;
 
@@ -7,7 +8,7 @@ import java.util.*;
  * en una serie de meses
  *
  * La agenda guardalos festivales en una colección map
- * La clave del map es el mes (un enumerado festivales.modelo.Mes)
+ * La clave del map es el mes (un enumerado festivales.modelo.festivales.modelo.Mes)
  * Cada mes tiene asociados en una colección ArrayList
  * los festivales  de ese mes
  *

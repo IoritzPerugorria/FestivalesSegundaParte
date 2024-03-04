@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8236b133-3c7d-4bd5-87b0-422188b28d1e" name="Changes" comment="Creacion de algunos metodos en AgendaFestivales.">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/FestivalesSegundaParte_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendaFestivales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Festival.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Festival.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestAgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestAgendaFestivales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/modelo/AgendaFestivales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Estilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/modelo/Estilo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Festival.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/modelo/Festival.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FestivalesIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/IO/FestivalesIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/modelo/Mes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestAgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales/test/TestAgendaFestivales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/festivales.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/festivales.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +41,7 @@
     "Application.TestAgendaFestivales.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -40,9 +50,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

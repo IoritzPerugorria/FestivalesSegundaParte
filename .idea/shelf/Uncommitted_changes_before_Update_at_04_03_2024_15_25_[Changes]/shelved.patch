@@ -1,0 +1,107 @@
+Index: src/AgendaFestivales.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport java.util.ArrayList;\r\nimport java.util.HashSet;\r\nimport java.util.Map;\r\nimport java.util.Set;\r\nimport java.util.TreeMap;\r\n\r\n\r\n/**\r\n * Esta clase guarda una agenda con los festivales programados\r\n * en una serie de meses\r\n *\r\n * La agenda guardalos festivales en una colecci�n map\r\n * La clave del map es el mes (un enumerado festivales.modelo.Mes)\r\n * Cada mes tiene asociados en una colecci�n ArrayList\r\n * los festivales  de ese mes\r\n *\r\n * Solo aparecen los meses que incluyen alg�n festival\r\n *\r\n * Las claves se recuperan en orden alfab�ico\r\n *\r\n */\r\npublic class AgendaFestivales {\r\n    private TreeMap<Mes, ArrayList<Festival>> agenda;\r\n    \r\n    public AgendaFestivales() {\r\n        this.agenda = new TreeMap<>();\r\n    }\r\n\r\n    /**\r\n     * a�ade un nuevo festival a la agenda\r\n     *\r\n     * Si la clave (el mes en el que se celebra el festival)\r\n     * no existe en la agenda se crear� una nueva entrada\r\n     * con dicha clave y la colecci�n formada por ese �nico festival\r\n     *\r\n     * Si la clave (el mes) ya existe se a�ade el nuevo festival\r\n     * a la lista de festivales que ya existe ese ms\r\n     * insert�ndolo de forma que quede ordenado por nombre de festival.\r\n     * Para este segundo caso usa el m�todo de ayuda\r\n     * obtenerPosicionDeInsercion()\r\n     *\r\n     */\r\n    public void addFestival(Festival festival) {\r\n        //TODO\r\n        \r\n        \r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param festivales una lista de festivales\r\n     * @param festival\r\n     * @return la posici�n en la que deber�a ir el nuevo festival\r\n     * de forma que la lista quedase ordenada por nombre\r\n     */\r\n    private int obtenerPosicionDeInsercion(ArrayList<Festival> festivales,\r\n                                           Festival festival) {\r\n       //TODO\r\n        \r\n        return 0;\r\n        \r\n    }\r\n\r\n    /**\r\n     * Representaci�n textual del festival\r\n     * De forma eficiente\r\n     *  Usa el conjunto de entradas para recorrer el map\r\n     */\r\n    @Override\r\n    public String toString() {\r\n        //TODO\r\n        \r\n        return null;\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param mes el mes a considerar\r\n     * @return la cantidad de festivales que hay en ese mes\r\n     * Si el mes no existe se devuelve -1\r\n     */\r\n    public int festivalesEnMes(Mes mes) {\r\n       //TODO\r\n        \r\n        return 0;\r\n    }\r\n\r\n    /**\r\n     * Se trata de agrupar todos los festivales de la agenda\r\n     * por estilo.\r\n     * Cada estilo que aparece en la agenda tiene asociada una colecci�n\r\n     * que es el conjunto de nombres de festivales que pertenecen a ese estilo\r\n     * Importa el orden de los nombres en el conjunto\r\n     *\r\n     * Identifica el tipo exacto del valor de retorno\r\n     */\r\n    public  Map   festivalesPorEstilo() {\r\n       //TODO\r\n\r\n         \r\n\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Se cancelan todos los festivales organizados en alguno de los\r\n     * lugares que indica el conjunto en el mes indicado. Los festivales\r\n     * concluidos o que no empezados no se tienen en cuenta\r\n     * Hay que borrarlos de la agenda\r\n     * Si el mes no existe se devuelve -1\r\n     *\r\n     * Si al borrar de un mes los festivales el mes queda con 0 festivales\r\n     * se borra la entrada completa del map\r\n     */\r\n    public int cancelarFestivales(HashSet<String> lugares, Mes mes) {\r\n       //TODO\r\n        \r\n        return 0;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/src/AgendaFestivales.java b/src/AgendaFestivales.java
+--- a/src/AgendaFestivales.java	
++++ b/src/AgendaFestivales.java	
+@@ -1,4 +1,3 @@
+-
+ import java.util.ArrayList;
+ import java.util.HashSet;
+ import java.util.Map;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8236b133-3c7d-4bd5-87b0-422188b28d1e\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.name\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/encodings.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"customColor\": \"\",\r\n  \"associatedIndex\": 8\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2d6Fpz3HxZO7qnb8N4d5sGP9rMp\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8236b133-3c7d-4bd5-87b0-422188b28d1e\" name=\"Changes\" comment=\"\" />\r\n      <created>1709320809843</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1709320809843</updated>\r\n      <workItem from=\"1709320810872\" duration=\"45000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,14 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8236b133-3c7d-4bd5-87b0-422188b28d1e" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++    <list default="true" id="8236b133-3c7d-4bd5-87b0-422188b28d1e" name="Changes" comment="Commit de prueba">
++      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/AgendaFestivales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendaFestivales.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,9 +30,14 @@
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "master",
+     "ignore.virus.scanning.warn.message": "true",
+     "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+     "vue.rearranger.settings.migration": "true"
+   }
+@@ -53,11 +57,24 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1709320809843</updated>
+-      <workItem from="1709320810872" duration="45000" />
++      <workItem from="1709320810872" duration="1350000" />
+     </task>
++    <task id="LOCAL-00001" summary="Commit de prueba">
++      <option name="closed" value="true" />
++      <created>1709321033061</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1709321033061</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Commit de prueba" />
++    <option name="LAST_COMMIT_MESSAGE" value="Commit de prueba" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/encodings.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/src/FestivalesIO.java" charset="windows-1252" />
++    <file url="PROJECT" charset="windows-1252" />
++  </component>
++</project>
+\ No newline at end of file
